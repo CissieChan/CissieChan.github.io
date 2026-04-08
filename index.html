@@ -4,31 +4,82 @@
     <meta charset="UTF-8">
     <title>我的个人网页</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: "Microsoft YaHei", sans-serif;
             max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #fdf2f8;
+            line-height: 1.7;
+            color: #333;
         }
+
         .header {
             text-align: center;
-            background-color: #24292e;
+            background-color: #f25b8f;
             color: white;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 36px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(242, 91, 143, 0.15);
         }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
         .content {
-            background-color: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #fff;
+            padding: 32px;
+            margin-top: 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
+
+        .content h2 {
+            color: #f25b8f;
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .content ul {
+            padding-left: 22px;
+            margin-bottom: 24px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        /* 区块分割线 */
+        .divider {
+            height: 1px;
+            background-color: #fce4ec;
+            margin: 28px 0;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 20px;
-            color: #666;
+            margin-top: 30px;
+            color: #999;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -40,17 +91,21 @@
     
     <div class="content">
         <h2>关于我</h2>
-        <p>大家好，我是【你的姓名】，一名【你的专业】学生。</p>
-        
+        <p>您好，我是【陈佳希】，一名【工业设计工程】学生。</p>
+
+        <div class="divider"></div>
+
         <h2>我的兴趣</h2>
         <ul>
             <li>人工智能</li>
-            <li>编程开发</li>
-            <li>阅读写作</li>
+            <li>UI/UX</li>
+            <li>三维建模与动态</li>
         </ul>
-        
+
+        <div class="divider"></div>
+
         <h2>联系方式</h2>
-        <p>邮箱：你的邮箱@example.com</p>
+        <p>邮箱：2486754851@qq.com</p>
     </div>
     
     <div class="footer">
