@@ -12,6 +12,13 @@ YPE html>
         }
         html {
             scroll-behavior: smooth;
+            touch-action: pan-y;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: none;
+        }
+        body {
+            touch-action: pan-y;
+            overscroll-behavior: none;
         }
         /* 亮色默认变量 */
         :root {
@@ -1327,6 +1334,7 @@ YPE html>
             perspective: 1200px;
             user-select: none;
             margin-top: 30px;
+            touch-action: pan-x;
         }
         /* 椭圆轨道（不可见的参考线） */
         .dynamic-ring-track {
@@ -1614,17 +1622,23 @@ YPE html>
             .folder-item:nth-child(6) { top: 68%; right: 5%; }
             
             .folder-icon {
-                width: 80px;
-                height: 62px;
+                width: 68px;
+                height: 52px;
             }
             .folder-icon::before {
-                width: 44px;
-                height: 15px;
-                top: -14px;
+                width: 37px;
+                height: 13px;
+                top: -12px;
             }
             .folder-icon::after {
-                height: 15px;
-                top: -14px;
+                height: 13px;
+                top: -12px;
+            }
+            .folder-label {
+                font-size: 13px;
+            }
+            .folder-label .en {
+                font-size: 10px;
             }
             
             .works-folders-inner {
@@ -1725,13 +1739,14 @@ YPE html>
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
-                padding: 100px 20px 40px;
+                padding: 80px 15px 30px;
                 overflow-y: auto;
+                gap: 10px;
             }
             .folder-item {
                 position: static !important;
                 transform: none !important;
-                margin: 12px !important;
+                margin: 8px !important;
             }
             .folder-icon {
                 width: 64px;
@@ -1754,48 +1769,68 @@ YPE html>
             }
             
             .works-folders-container {
-                padding: 30px 0;
+                padding: 30px 15px;
                 min-height: auto;
+                overflow: visible;
             }
             .works-folders {
-                height: 400px;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                overflow: visible;
             }
             .works-folders-inner {
                 width: 100%;
-                max-width: 400px;
+                max-width: 480px;
+                height: auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 20px;
+                justify-items: center;
+                overflow: visible;
             }
             .work-folder {
-                width: 140px;
-                left: 50% !important;
-                transform: translateX(-50%) rotate(var(--rot, 0deg)) !important;
+                position: relative;
+                width: 120px;
+                left: auto !important;
+                top: auto !important;
+                transform: rotate(var(--rot, 0deg)) !important;
             }
-            .work-folder:nth-child(1) { top: 2%; }
-            .work-folder:nth-child(2) { top: 18%; }
-            .work-folder:nth-child(3) { top: 34%; }
-            .work-folder:nth-child(4) { top: 50%; }
-            .work-folder:nth-child(5) { top: 66%; }
-            .work-folder:nth-child(6) { top: 82%; }
+            .work-folder:nth-child(1) { top: auto; }
+            .work-folder:nth-child(2) { top: auto; }
+            .work-folder:nth-child(3) { top: auto; }
+            .work-folder:nth-child(4) { top: auto; }
+            .work-folder:nth-child(5) { top: auto; }
+            .work-folder:nth-child(6) { top: auto; }
             .work-folder-body {
-                height: 140px;
-                padding-bottom: 10px;
+                height: 120px;
+                padding-bottom: 8px;
             }
             .work-folder-body::before {
-                width: 78px;
-                height: 16px;
-                top: -12px;
+                width: 67px;
+                height: 14px;
+                top: -10px;
             }
             .work-folder-label {
-                font-size: 14px;
+                font-size: 13px;
             }
             .work-folder-label .en {
-                font-size: 10px;
+                font-size: 9px;
             }
             .work-folder-content {
-                width: 220px;
-                bottom: 160px;
+                width: 240px;
+                bottom: 140px;
+                left: 50%;
+                transform: translateX(-50%) scale(0);
+                z-index: 9999;
+            }
+            .work-folder.active .work-folder-content {
+                transform: translateX(-50%) scale(1) rotate(var(--content-rot, 0deg));
             }
             .work-content-img {
-                height: 160px;
+                height: 140px;
             }
             
             .hanging-skills-container {
@@ -1841,6 +1876,10 @@ YPE html>
                 font-size: 20px;
             }
             
+            .about-modal-overlay {
+                position: fixed;
+                z-index: 9999;
+            }
             .about-modal {
                 width: 95vw;
                 max-height: 90vh;
@@ -1898,19 +1937,34 @@ YPE html>
             }
             
             .dynamic-ring-container {
-                height: 260px;
+                height: 220px;
+                margin-top: 20px;
             }
             .dynamic-ring-item {
-                width: 260px;
+                width: 240px;
             }
             .dynamic-ring-card {
-                padding: 20px 24px;
+                padding: 16px 20px;
             }
             .dynamic-ring-card h4 {
-                font-size: 17px;
+                font-size: 16px;
+                margin-bottom: 6px;
             }
             .dynamic-ring-card p {
-                font-size: 14px;
+                font-size: 13px;
+                line-height: 1.4;
+            }
+            .dynamic-ring-date {
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+            .dynamic-ring-dots {
+                margin-top: 15px;
+                gap: 8px;
+            }
+            .dynamic-ring-dot {
+                width: 7px;
+                height: 7px;
             }
             
             .section-header {
@@ -1996,10 +2050,20 @@ YPE html>
             }
             
             .work-folder {
-                width: 110px;
+                width: 100px;
+                position: relative;
+                left: auto !important;
+                top: auto !important;
+                transform: rotate(var(--rot, 0deg)) !important;
             }
             .work-folder-body {
-                height: 110px;
+                height: 100px;
+                padding-bottom: 6px;
+            }
+            .work-folder-body::before {
+                width: 56px;
+                height: 12px;
+                top: -9px;
             }
             .work-folder-label {
                 font-size: 12px;
@@ -2007,9 +2071,11 @@ YPE html>
             .work-folder-content {
                 width: 190px;
                 padding: 12px;
+                bottom: 120px;
+                z-index: 9999;
             }
             .work-content-img {
-                height: 120px;
+                height: 100px;
             }
             .work-content-title {
                 font-size: 18px;
