@@ -1535,9 +1535,176 @@ YPE html>
             transition: color 0.3s;
         }
 
-        /* 响应式设计 */
+        /* 响应式设计 - 大屏幕优化（1400px以上） */
+        @media (min-width: 1400px) {
+            .nav-wrap {
+                padding: 0 60px;
+            }
+            section {
+                padding: 100px 60px;
+            }
+            .hero-content {
+                padding: 120px 60px 60px;
+            }
+            .works-folders-inner {
+                width: 1700px;
+            }
+        }
+
+        /* 响应式设计 - 中等屏幕（平板横向 1024px-1200px） */
+        @media (max-width: 1200px) {
+            .nav-wrap {
+                padding: 0 30px;
+            }
+            section {
+                padding: 80px 30px;
+            }
+            .hero-content {
+                padding: 100px 30px 40px;
+            }
+            
+            .works-folders-inner {
+                width: 1300px;
+            }
+            .work-folder {
+                width: 220px;
+            }
+            .work-folder-body {
+                height: 220px;
+            }
+            .work-folder-label {
+                font-size: 20px;
+            }
+            .work-folder-label .en {
+                font-size: 14px;
+            }
+            
+            .hanging-skill {
+                --card-scale: 0.9;
+            }
+            .hanging-card {
+                width: 160px;
+                padding: 18px;
+            }
+            .skill-name {
+                font-size: 16px;
+            }
+        }
+
+        /* 响应式设计 - 平板设备（768px-1024px） */
+        @media (max-width: 1024px) {
+            .nav-wrap {
+                padding: 0 25px;
+            }
+            
+            .hero-title-top {
+                font-size: 24px;
+                letter-spacing: 6px;
+            }
+            .hero-title-bottom {
+                font-size: 56px;
+                letter-spacing: 3px;
+            }
+            
+            .folder-item:nth-child(1) { top: 30%; left: 25%; }
+            .folder-item:nth-child(2) { top: 50%; left: 15%; }
+            .folder-item:nth-child(3) { top: 70%; left: 10%; }
+            .folder-item:nth-child(4) { top: 28%; right: 5%; }
+            .folder-item:nth-child(5) { top: 48%; right: 5%; }
+            .folder-item:nth-child(6) { top: 68%; right: 5%; }
+            
+            .folder-icon {
+                width: 80px;
+                height: 62px;
+            }
+            .folder-icon::before {
+                width: 44px;
+                height: 15px;
+                top: -14px;
+            }
+            .folder-icon::after {
+                height: 15px;
+                top: -14px;
+            }
+            
+            .works-folders-inner {
+                width: 900px;
+            }
+            .work-folder {
+                width: 180px;
+            }
+            .work-folder-body {
+                height: 180px;
+                padding-bottom: 15px;
+            }
+            .work-folder-body::before {
+                width: 100px;
+                height: 20px;
+                top: -16px;
+            }
+            .work-folder-label {
+                font-size: 17px;
+            }
+            .work-folder-label .en {
+                font-size: 12px;
+            }
+            
+            .hanging-skills-container {
+                min-height: 220px;
+            }
+            .hanging-skill {
+                --card-scale: 0.85;
+            }
+            .hanging-card {
+                width: 145px;
+                padding: 15px;
+            }
+            .skill-name {
+                font-size: 14px;
+            }
+            
+            .about-folder {
+                width: 450px;
+                height: 220px;
+            }
+            .about-folder-body {
+                height: 185px;
+            }
+            .about-folder-tab {
+                top: -32px;
+                height: 36px;
+            }
+            
+            .about-modal {
+                width: 850px;
+            }
+            .about-modal-content {
+                padding: 35px;
+                gap: 40px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .contact-item {
+                min-width: 300px;
+            }
+        }
+
+        /* 响应式设计 - 手机设备（480px-768px） */
         @media (max-width: 768px) {
-            /* Hero区域调整 */
+            .nav-wrap {
+                padding: 0 20px;
+            }
+            .nav-links {
+                display: none;
+            }
+            
+            section {
+                padding: 60px 20px;
+            }
+            
             .hero-content {
                 padding: 80px 20px 40px;
             }
@@ -1546,26 +1713,25 @@ YPE html>
                 letter-spacing: 4px;
             }
             .hero-title-bottom {
-                font-size: 32px;
+                font-size: 36px;
                 letter-spacing: 2px;
             }
             .hero-subtitle {
                 font-size: 13px;
             }
-
-            /* 文件夹在移动端堆叠 */
+            
             .folder-nav {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
-                padding: 120px 20px 40px;
+                padding: 100px 20px 40px;
                 overflow-y: auto;
             }
             .folder-item {
                 position: static !important;
                 transform: none !important;
-                margin: 15px !important;
+                margin: 12px !important;
             }
             .folder-icon {
                 width: 64px;
@@ -1586,16 +1752,178 @@ YPE html>
             .folder-label .en {
                 font-size: 9px;
             }
-
-            /* 导航栏调整 */
-            .nav-links {
-                display: none;
+            
+            .works-folders-container {
+                padding: 30px 0;
+                min-height: auto;
             }
-            .nav-wrap {
-                padding: 0 20px;
+            .works-folders {
+                height: 400px;
             }
-
-            /* 模块卡片调整 */
+            .works-folders-inner {
+                width: 100%;
+                max-width: 400px;
+            }
+            .work-folder {
+                width: 140px;
+                left: 50% !important;
+                transform: translateX(-50%) rotate(var(--rot, 0deg)) !important;
+            }
+            .work-folder:nth-child(1) { top: 2%; }
+            .work-folder:nth-child(2) { top: 18%; }
+            .work-folder:nth-child(3) { top: 34%; }
+            .work-folder:nth-child(4) { top: 50%; }
+            .work-folder:nth-child(5) { top: 66%; }
+            .work-folder:nth-child(6) { top: 82%; }
+            .work-folder-body {
+                height: 140px;
+                padding-bottom: 10px;
+            }
+            .work-folder-body::before {
+                width: 78px;
+                height: 16px;
+                top: -12px;
+            }
+            .work-folder-label {
+                font-size: 14px;
+            }
+            .work-folder-label .en {
+                font-size: 10px;
+            }
+            .work-folder-content {
+                width: 220px;
+                bottom: 160px;
+            }
+            .work-content-img {
+                height: 160px;
+            }
+            
+            .hanging-skills-container {
+                min-height: 300px;
+            }
+            .hanging-skill {
+                position: relative;
+                top: 0 !important;
+                left: auto !important;
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 15px;
+                opacity: 1 !important;
+                animation: none !important;
+            }
+            .hanging-line {
+                width: 40px;
+                height: 2px;
+                margin-right: 10px;
+                margin-bottom: 0;
+            }
+            .hanging-card {
+                width: calc(100% - 50px);
+                padding: 12px;
+            }
+            .skill-name {
+                font-size: 14px;
+            }
+            
+            .about-folder {
+                width: 100%;
+                max-width: 350px;
+                height: 200px;
+            }
+            .about-folder-body {
+                height: 170px;
+            }
+            .about-folder-tab {
+                top: -28px;
+                height: 32px;
+            }
+            .about-folder-hint {
+                font-size: 20px;
+            }
+            
+            .about-modal {
+                width: 95vw;
+                max-height: 90vh;
+            }
+            .about-modal-content {
+                flex-direction: column;
+                padding: 25px;
+                gap: 25px;
+            }
+            .about-modal-left {
+                width: 100%;
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 2px solid #ffe4ec;
+                padding-bottom: 25px;
+            }
+            .about-modal-right {
+                width: 100%;
+            }
+            .about-avatar {
+                width: 160px;
+                height: 160px;
+            }
+            .about-name {
+                font-size: 22px;
+            }
+            .about-tags {
+                justify-content: center;
+            }
+            .about-tag {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+            .about-hobbies {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-hobby-puzzle {
+                padding: 15px 10px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .contact-item {
+                min-width: auto;
+                width: 100%;
+                padding: 12px 20px;
+            }
+            .contact-icon {
+                font-size: 20px;
+            }
+            .contact-text {
+                font-size: 15px;
+            }
+            
+            .dynamic-ring-container {
+                height: 260px;
+            }
+            .dynamic-ring-item {
+                width: 260px;
+            }
+            .dynamic-ring-card {
+                padding: 20px 24px;
+            }
+            .dynamic-ring-card h4 {
+                font-size: 17px;
+            }
+            .dynamic-ring-card p {
+                font-size: 14px;
+            }
+            
+            .section-header {
+                padding-left: 10px;
+            }
+            .section-header-top {
+                font-size: 16px;
+                letter-spacing: 4px;
+            }
+            .section-header-bottom {
+                font-size: 32px;
+            }
+            
             .profile-row {
                 flex-direction: column;
                 text-align: center;
@@ -1612,6 +1940,131 @@ YPE html>
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
+            }
+            
+            .badge-box {
+                flex-direction: row;
+            }
+            
+            .project-masonry {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        /* 响应式设计 - 小屏手机（<480px） */
+        @media (max-width: 480px) {
+            .nav-wrap {
+                height: 56px;
+            }
+            nav.scroll-active .nav-wrap {
+                height: 50px;
+            }
+            
+            .hero-content {
+                padding: 70px 15px 30px;
+            }
+            .hero-title-top {
+                font-size: 14px;
+                letter-spacing: 3px;
+            }
+            .hero-title-bottom {
+                font-size: 28px;
+                letter-spacing: 1px;
+            }
+            .hero-subtitle {
+                font-size: 12px;
+            }
+            
+            .folder-icon {
+                width: 52px;
+                height: 40px;
+            }
+            .folder-icon::before {
+                width: 28px;
+                height: 10px;
+                top: -9px;
+            }
+            .folder-icon::after {
+                height: 10px;
+                top: -9px;
+            }
+            .folder-label {
+                font-size: 10px;
+            }
+            .folder-label .en {
+                font-size: 8px;
+            }
+            
+            .work-folder {
+                width: 110px;
+            }
+            .work-folder-body {
+                height: 110px;
+            }
+            .work-folder-label {
+                font-size: 12px;
+            }
+            .work-folder-content {
+                width: 190px;
+                padding: 12px;
+            }
+            .work-content-img {
+                height: 120px;
+            }
+            .work-content-title {
+                font-size: 18px;
+            }
+            .work-content-desc {
+                font-size: 14px;
+            }
+            
+            .about-folder {
+                height: 160px;
+            }
+            .about-folder-body {
+                height: 135px;
+            }
+            .about-folder-star {
+                font-size: 48px;
+            }
+            .about-folder-hint {
+                font-size: 16px;
+            }
+            
+            .about-avatar {
+                width: 120px;
+                height: 120px;
+            }
+            .about-hobbies {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-text {
+                font-size: 13px;
+            }
+            
+            .dynamic-ring-item {
+                width: 220px;
+            }
+            .dynamic-ring-card {
+                padding: 16px 20px;
+            }
+            
+            .section-header-top {
+                font-size: 14px;
+            }
+            .section-header-bottom {
+                font-size: 26px;
+            }
+            
+            .project-masonry {
+                grid-template-columns: 1fr;
+            }
+            
+            .comment-box textarea {
+                height: 100px;
+                padding: 12px;
+                font-size: 14px;
             }
         }
     </style>
@@ -2368,9 +2821,6 @@ YPE html>
             if (!container || !track) return;
             var items = track.querySelectorAll('.dynamic-ring-item');
             var N = items.length; // 卡片总数
-            // 椭圆参数：宽远大于高，形成扁平横向椭圆
-            var RX = 560; // 椭圆水平半径
-            var RY = 80;  // 椭圆垂直半径（很小，扁平）
             var angleOffset = 0; // 当前旋转角度（弧度）
             var autoSpeed = 0.0035; // 自动滚动速度
             var isAuto = true; // 是否自动滚动
@@ -2383,6 +2833,20 @@ YPE html>
             var dotsContainer = document.getElementById('dynamicRingDots');
             var dots = [];
 
+            function getEllipseParams() {
+                var width = container.offsetWidth;
+                if (width < 480) {
+                    return { RX: 180, RY: 40 };
+                } else if (width < 768) {
+                    return { RX: 280, RY: 55 };
+                } else if (width < 1024) {
+                    return { RX: 400, RY: 70 };
+                } else if (width < 1200) {
+                    return { RX: 480, RY: 75 };
+                }
+                return { RX: 560, RY: 80 };
+            }
+
             // 创建圆点指示器
             if (dotsContainer) {
                 for (var d = 0; d < N; d++) {
@@ -2391,7 +2855,6 @@ YPE html>
                     dot.setAttribute('data-index', d);
                     (function(idx) {
                         dot.addEventListener('click', function() {
-                            // 跳转到对应卡片到正前方
                             angleOffset = -Math.PI / 2 - (idx / N) * Math.PI * 2;
                             updatePositions();
                         });
@@ -2403,20 +2866,20 @@ YPE html>
 
             // 计算并更新所有卡片位置
             function updatePositions() {
+                var params = getEllipseParams();
+                var RX = params.RX;
+                var RY = params.RY;
                 var frontIndex = -1;
                 var minDist = Infinity;
                 for (var i = 0; i < N; i++) {
                     var angle = (i / N) * Math.PI * 2 + angleOffset;
-                    // 椭圆参数方程：x = RX*cos, y = RY*sin
                     var x = RX * Math.cos(angle);
                     var y = RY * Math.sin(angle);
-                    // 深度：sin(angle) > 0 表示在椭圆后半部分（远处）
-                    var depth = (Math.sin(angle) + 1) / 2; // 0~1
-                    var scale = 1 - depth * 0.35; // 后面的卡片缩小
-                    var opacity = 1 - depth * 0.5; // 后面的卡片半透明
+                    var depth = (Math.sin(angle) + 1) / 2;
+                    var scale = 1 - depth * 0.35;
+                    var opacity = 1 - depth * 0.5;
                     var zIndex = Math.round((1 - depth) * 100);
 
-                    // 选中卡片放大
                     if (i === activeIndex) {
                         scale *= 1.3;
                         zIndex = 999;
@@ -2427,20 +2890,17 @@ YPE html>
                     items[i].style.opacity = opacity;
                     items[i].style.zIndex = zIndex;
 
-                    // 找到最前方的卡片（sin(angle)最接近-1，即depth最小）
                     if (depth < minDist) {
                         minDist = depth;
                         frontIndex = i;
                     }
 
-                    // 弱化未选中卡片
                     if (activeIndex !== -1 && i !== activeIndex) {
                         items[i].classList.add('is-dimmed');
                     } else {
                         items[i].classList.remove('is-dimmed');
                     }
                 }
-                // 同步更新圆点高亮
                 if (dots.length > 0) {
                     for (var j = 0; j < dots.length; j++) {
                         if (j === frontIndex) {
@@ -2475,10 +2935,8 @@ YPE html>
                     item.classList.remove('is-active');
                     updatePositions();
                 });
-                // 点击也可以选中
                 item.addEventListener('click', function(e) {
                     e.stopPropagation();
-                    // 点击跳转到正前方
                     angleOffset = (idx / N) * Math.PI * 2;
                     updatePositions();
                 });
@@ -2486,7 +2944,6 @@ YPE html>
 
             // 拖拽交互
             container.addEventListener('mousedown', function(e) {
-                // 只在非卡片区域拖拽，或卡片上也可拖拽
                 isDragging = true;
                 dragStartX = e.clientX;
                 dragStartAngle = angleOffset;
@@ -2524,7 +2981,11 @@ YPE html>
                 }
             });
 
-            // 启动自动循环
+            // 响应式调整
+            window.addEventListener('resize', function() {
+                updatePositions();
+            });
+
             autoLoop();
         })();
     </script>
