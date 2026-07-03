@@ -1735,18 +1735,22 @@ YPE html>
             }
             
             .folder-nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+                position: absolute;
+                top: auto;
+                bottom: 30px;
+                left: 0;
+                right: 0;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                justify-items: center;
                 align-items: center;
-                padding: 80px 15px 30px;
-                overflow-y: auto;
-                gap: 10px;
+                padding: 0 15px;
+                gap: 15px 10px;
             }
             .folder-item {
                 position: static !important;
                 transform: none !important;
-                margin: 8px !important;
+                margin: 0 !important;
             }
             .folder-icon {
                 width: 64px;
